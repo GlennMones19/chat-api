@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,6 @@ Route::get('showmessage/{id}', [MessageController::class, 'show']);
 Route::post('addmessage', [MessageController::class, 'store']);
 Route::put('updatemessage/{id}', [MessageController::class, 'update']);
 Route::delete('deletemessage/{id}', [MessageController::class, 'destroy']);
+
+Route::get('users', [UserController::class, 'index']);
+Route::get('show_user/{id}', [UserController::class, 'show']);

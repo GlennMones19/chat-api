@@ -77,9 +77,6 @@ class MessageController extends Controller
                 'message' => $message
             ], 200);
             
-            return response()->json([
-                'message' => "Message updated."
-            ], 200);
         } catch(\Exception $e) {
             return response()->json([
                 'message' => "Not Found!"

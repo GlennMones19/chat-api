@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Message extends Model
 {
@@ -12,8 +13,12 @@ class Message extends Model
     protected $table = 'messages';
 
     protected $fillable =  [
-        'name',
-        'message_item',
-        'status'
+        'user_id',
+        'message_body'
     ];
+
+    public function user() 
+    {
+        return $this->belongsTo(User::class);
+    }
 }
